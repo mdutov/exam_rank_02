@@ -76,6 +76,8 @@ char	*ft_newstr(size_t n)
 {
 	void	*d;
 
+	if (n < 0)
+		return(NULL);
 	if ((d = malloc(sizeof(char) * (n + 1))))
 		ft_memset((char *)d, 0, n);
 	*((char *)d + n) = '\0';
