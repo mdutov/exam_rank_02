@@ -10,7 +10,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_memset(char *s, int c, size_t n)
+void	ft_memset(char *s, int c, size_t n)
 {
 	char	*d;
 
@@ -20,7 +20,6 @@ char	*ft_memset(char *s, int c, size_t n)
 		while (n--)
 			*d++ = c;
 	}
-	return (s);
 }
 
 char	*ft_newstr(size_t n)
@@ -51,8 +50,7 @@ char	*ft_strchr(char *s, int c)
 	{
 		if (*d == c)
 			return (d);
-		else
-			d++;
+		d++;
 	}
 	if (*d == c && c == '\0')
 		return (d);
@@ -106,7 +104,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (bgn);
 }
 
-static void		next_str_to_buf(char **line, char *buf)
+void		next_str_to_buf(char **line, char *buf)
 {
 	int				len;
 	char			*del_ln;
