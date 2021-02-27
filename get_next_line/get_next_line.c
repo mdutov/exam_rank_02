@@ -10,28 +10,6 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-void	ft_memset(char *s, int c, size_t n)
-{
-	char	*d;
-
-	d = s;
-	if (n)
-	{
-		while (n--)
-			*d++ = c;
-	}
-}
-
-char	*ft_newstr(size_t n)
-{
-	void	*d;
-
-	if ((d = malloc(sizeof(char) * (n + 1))))
-		ft_memset((char *)d, 0, n);
-	*((char *)d + n) = '\0';
-	return ((char *)d);
-}
-
 void	ft_memdel(char	*s)
 {
 	if (s)
@@ -80,6 +58,28 @@ char	*ft_memmove(char *s1, char *s2, size_t n)
 		}
 	}
 	return (d1);
+}
+
+void	ft_memset(char *s, int c, size_t n)
+{
+	char	*d;
+
+	d = s;
+	if (n)
+	{
+		while (n--)
+			*d++ = c;
+	}
+}
+
+char	*ft_newstr(size_t n)
+{
+	void	*d;
+
+	if ((d = malloc(sizeof(char) * (n + 1))))
+		ft_memset((char *)d, 0, n);
+	*((char *)d + n) = '\0';
+	return ((char *)d);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
