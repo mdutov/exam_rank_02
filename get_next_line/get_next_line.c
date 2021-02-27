@@ -13,13 +13,11 @@ size_t	ft_strlen(char *s)
 char	*ft_memset(char *s, int c, size_t n)
 {
 	char	*d;
-	size_t			i;
 
 	d = s;
-	i = n;
-	if (i)
+	if (n)
 	{
-		while (i--)
+		while (n--)
 			*d++ = c;
 	}
 	return (s);
