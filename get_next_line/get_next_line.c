@@ -30,7 +30,8 @@ char	*ft_newstr(size_t n)
 	void	*d;
 
 	if ((d = malloc(sizeof(char) * (n + 1))))
-		ft_memset((char *)d, 0, n + 1);	
+		ft_memset((char *)d, 0, n);
+	*((char *)d + n) = '\0';
 	return ((char *)d);
 }
 
@@ -104,7 +105,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (d2)
 		while (*d2)
 			*tmp++ = *d2++;
-	*tmp = '\0';
 	return (bgn);
 }
 
@@ -129,7 +129,7 @@ int		get_next_line(char **line)
 
 	if (BUFFER_SIZE <= 0 || !line)
 		return (-1);
-	*line = ft_strjoin("", "");
+	*line = ft_newstr(0);
 	rd = 1;
 	while (rd)
 	{
