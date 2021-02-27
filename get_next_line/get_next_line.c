@@ -1,6 +1,6 @@
 #include "get_next_line.h"
 
-size_t				ft_strlen(char *s)
+size_t	ft_strlen(char *s)
 {
 	size_t i;
 
@@ -12,10 +12,10 @@ size_t				ft_strlen(char *s)
 
 char	*ft_memset(char *s, int c, size_t n)
 {
-	unsigned char	*d;
+	char	*d;
 	size_t			i;
 
-	d = (unsigned char *)s;
+	d = s;
 	i = n;
 	if (i)
 	{
@@ -34,7 +34,7 @@ char	*ft_newstr(size_t n)
 	return ((char *)d);
 }
 
-void				ft_memdel(char	*s)
+void	ft_memdel(char	*s)
 {
 	if (s)
 	{
@@ -43,7 +43,7 @@ void				ft_memdel(char	*s)
 	}
 }
 
-char				*ft_strchr(char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
 	char	*d;
 
@@ -108,7 +108,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (bgn);
 }
 
-static void			next_str_to_buf(char **line, char *buf)
+static void		next_str_to_buf(char **line, char *buf)
 {
 	int				len;
 	char			*del_ln;
@@ -121,7 +121,7 @@ static void			next_str_to_buf(char **line, char *buf)
 	ft_memset(buf + len, 0, BUFFER_SIZE - len);
 }
 
-int					get_next_line(char **line)
+int		get_next_line(char **line)
 {
 	static char		buf[BUFFER_SIZE + 1];
 	char			*ptr;
